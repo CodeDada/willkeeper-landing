@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WillKeeper - Digital Inheritance Platform for India</title>
+    <meta name="description" content="Secure your family's financial future. â¹82,000 crore sits unclaimed in India. WillKeeper ensures your loved ones always know what you've built for them.">
+
+    <!-- Open Graph for LinkedIn -->
+    <meta property="og:title" content="WillKeeper - Your Family Deserves to Know What You Built">
+    <meta property="og:description" content="â¹82,000 crore sits unclaimed in India because families don't know what exists. WillKeeper ensures they always will.">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect fill='%231A56DB' width='1200' height='630'/%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://willkeeper.in">
+
+    <!-- Favicon as inline SVG -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%231A56DB' width='32' height='32'/%3E%3Cpath fill='white' d='M16 4c-1.1 0-2 .9-2 2v4h-4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V12c0-1.1-.9-2-2-2h-4V6c0-1.1-.9-2-2-2zm0 2h2v4h-2V6zm-6 6h12v12H10V12z'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1f2937;
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Colors */
+        :root {
+            --primary: #1A56DB;
+            --secondary: #0D7377;
+            --accent: #F59E0B;
+            --light-bg: #f9fafb;
+            --border: #e5e7eb;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .cta-button:hover {
+            background: #f08c00;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 1.5rem;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26, 86, 219, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-highlight {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .primary-btn {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .primary-btn:hover {
+            background: #f08c00;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .secondary-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 0.5rem;
+        }
+
+        .secondary-link:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        section > p:first-of-type {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: linear-gradient(135deg, #fef3c7 0%, #fef9e7 100%);
+        }
+
+        .stat-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-card-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Solution Section */
+        .solution {
+            background: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 1.5rem auto;
+        }
+
+        .step-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .step-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Features Grid */
+        .features {
+            background: var(--light-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s;
+            border-top: 3px solid var(--accent);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background: white;
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .comparison-box {
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 2px solid var(--border);
+        }
+
+        .comparison-box.without {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+
+        .comparison-box.with {
+            background: #dcfce7;
+            border-color: #22c55e;
+        }
+
+        .comparison-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .comparison-box ul {
+            list-style: none;
+        }
+
+        .comparison-box li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .comparison-box.without li::before {
+            content: 'â';
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+            font-weight: 800;
+        }
+
+        .comparison-box.with li::before {
+            content: 'â';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: 800;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--light-bg);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+            position: relative;
+        }
+
+        .pricing-card:nth-child(2) {
+            border-top-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:nth-child(3) {
+            border-top-color: var(--secondary);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-card:nth-child(2):hover {
+            transform: scale(1.08) translateY(-8px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: none;
+        }
+
+        .pricing-card:nth-child(2) .pricing-badge {
+            display: block;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .pricing-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .pricing-period {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.6rem 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .pricing-features li::before {
+            content: 'â';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            font-weight: 600;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:nth-child(2) .pricing-cta {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .pricing-cta:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .pricing-card:nth-child(2) .pricing-cta:hover {
+            background: #f08c00;
+            border-color: #f08c00;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background: white;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .proof-card {
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .proof-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+        }
+
+        .proof-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .proof-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            background: white;
+            border: none;
+            width: 100%;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: var(--light-bg);
+        }
+
+        .faq-question::after {
+            content: 'â¼';
+            font-size: 0.75rem;
+            transition: transform 0.3s;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Email Capture Section */
+        .email-capture {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .email-capture h2 {
+            color: white;
+        }
+
+        .email-capture p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .email-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            flex-wrap: wrap;
+        }
+
+        .email-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .email-submit {
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .email-submit:hover {
+            background: #f08c00;
+            transform: translateY(-2px);
+        }
+
+        .email-counter {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .privacy-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #22c55e;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease-out;
+            z-index: 1000;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            padding: 3rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .primary-btn, .secondary-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stat-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid, .features-grid, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card:nth-child(2) {
+                transform: scale(1);
+            }
+
+            .pricing-card:nth-child(2):hover {
+                transform: translateY(-8px) scale(1);
+            }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-input {
+                width: 100%;
+            }
+
+            .email-submit {
+                width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .toast {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .pricing-card {
+                padding: 1.5rem;
+            }
+
+            .step-icon, .feature-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#1A56DB" width="32" height="32" rx="4"/>
+                    <path fill="white" d="M16 4c-1.1 0-2 .9-2 2v4h-4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V12c0-1.1-.9-2-2-2h-4V6c0-1.1-.9-2-2-2zm0 2h2v4h-2V6zm-6 6h12v12H10V12z"/>
+                </svg>
+                WillKeeper
+            </a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#email-capture" class="cta-button">Join Waitlist</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <h1>Your family deserves to know what <span class="hero-highlight">you built for them.</span></h1>
+            <p>â¹82,000 crore sits unclaimed in India because families don't know what exists. WillKeeper ensures they always will.</p>
+            <div class="hero-buttons">
+                <a href="#email-capture" class="primary-btn">Join the Waitlist</a>
+                <a href="#how-it-works" class="secondary-link">See How It Works â</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem fade-in" id="problem">
+        <h2>The Silent Crisis</h2>
+        <div class="stat-container">
+            <div class="stat-number">â¹82,000 Cr</div>
+            <div class="stat-label">Sits Unclaimed Across India</div>
+        </div>
+        <div class="stat-cards">
+            <div class="stat-card fade-in">
+                <h3>Life Insurance</h3>
+                <div class="stat-card-value">â¹25,000 Cr</div>
+            </div>
+            <div class="stat-card fade-in">
+                <h3>Mutual Funds</h3>
+                <div class="stat-card-value">â¹30,000 Cr</div>
+            </div>
+            <div class="stat-card fade-in">
+                <h3>Bank Fixed Deposits</h3>
+                <div class="stat-card-value">â¹15,000 Cr</div>
+            </div>
+            <div class="stat-card fade-in">
+                <h3>EPFO Accounts</h3>
+                <div class="stat-card-value">â¹12,000 Cr</div>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">Every year, millions of families lose what their loved ones worked for â not because of fraud, but because nobody told them it existed.</p>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution fade-in" id="how-it-works">
+        <h2>How WillKeeper Works</h2>
+        <p>Three simple steps to secure your family's financial future.</p>
+        <div class="steps-grid">
+            <div class="step-card fade-in">
+                <div class="step-number">1</div>
+                <svg class="step-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="15" width="60" height="70" rx="5" fill="none" stroke="#1A56DB" stroke-width="2"/>
+                    <path d="M35 35h30M35 50h30M35 65h20" stroke="#1A56DB" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="60" cy="30" r="4" fill="#F59E0B"/>
+                </svg>
+                <h3>Store</h3>
+                <p>Securely log every policy, investment, and account â connected to DigiLocker for government-verified documents.</p>
+            </div>
+            <div class="step-card fade-in">
+                <div class="step-number">2</div>
+                <svg class="step-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="35" cy="50" r="15" fill="none" stroke="#1A56DB" stroke-width="2"/>
+                    <circle cx="65" cy="50" r="15" fill="none" stroke="#1A56DB" stroke-width="2"/>
+                    <path d="M50 35v30M50 50h15" stroke="#1A56DB" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="35" cy="50" r="6" fill="#F59E0B"/>
+                </svg>
+                <h3>Assign</h3>
+                <p>Designate trusted nominees with verified access levels. They stay informed but can't access until needed.</p>
+            </div>
+            <div class="step-card fade-in">
+                <div class="step-number">3</div>
+                <svg class="step-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="25" width="60" height="50" rx="3" fill="none" stroke="#1A56DB" stroke-width="2"/>
+                    <path d="M30 45l8 8 12-15" stroke="#1A56DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="60" cy="40" r="3" fill="#F59E0B"/>
+                </svg>
+                <h3>Activate</h3>
+                <p>When needed, your family receives a complete guide to claim every asset with step-by-step instructions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features fade-in" id="features">
+        <h2>Powerful Features for Complete Peace of Mind</h2>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <svg class="feature-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-2 30h4v-10h-4v10zm0-14h4V14h-4v6z" fill="#1A56DB"/>
+                </svg>
+                <h3>Digital Vault</h3>
+                <p>Military-grade encryption with categorized storage for every type of financial asset and document.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <svg class="feature-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 2C11.94 2 2 11.94 2 24s9.94 22 22 22 22-9.94 22-22S36.06 2 24 2zm11 24h-10v10h-2V26H13v-2h10V14h2v10h10v2z" fill="#0D7377"/>
+                </svg>
+                <h3>DigiLocker Integration</h3>
+                <p>Direct connection to government-verified documents for authenticity and legal compliance.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <svg class="feature-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 2C11.94 2 2 11.94 2 24s9.94 22 22 22 22-9.94 22-22S36.06 2 24 2zm-2 33h4V27h-4v8zm0-12h4V11h-4v12z" fill="#F59E0B"/>
+                </svg>
+                <h3>Smart Nominees</h3>
+                <p>Verified nominees with role-based access. Emergency contacts stay informed, nothing more.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <svg class="feature-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16s7.18-16 16-16 16 7.18 16 16-7.18 16-16 16zm3.5-9h-7v-6h7v6z" fill="#1A56DB"/>
+                </svg>
+                <h3>Claim Guidance</h3>
+                <p>Step-by-step instructions for claiming every asset type. We guide your family through the entire process.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <svg class="feature-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 2C11.94 2 2 11.94 2 24s9.94 22 22 22 22-9.94 22-22S36.06 2 24 2zm0 40c-9.94 0-18-8.06-18-18s8.06-18 18-18 18 8.06 18 18-8.06 18-18 18zm0-32c-7.73 0-14 6.27-14 14s6.27 14 14 14 14-6.27 14-14-6.27-14-14-14z" fill="#0D7377"/>
+                </svg>
+                <h3>Vault Health Score</h3>
+                <p>Know what's missing. Get prompted to add insurance, investments, or accounts you've forgotten about.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <svg class="feature-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M36 6H12c-3.3 0-6 2.7-6 6v24c0 3.3 2.7 6 6 6h24c3.3 0 6-2.7 6-6V12c0-3.3-2.7-6-6-6zm0 30H12V12h24v24zM18 20h12v2H18zm0 4h12v2H18zm0 4h8v2h-8z" fill="#F59E0B"/>
+                </svg>
+                <h3>Annual Reminders</h3>
+                <p>Stay current with periodic check-ins to update accounts, balances, and nominee information.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison fade-in">
+        <h2>The WillKeeper Difference</h2>
+        <div class="comparison-container">
+            <div class="comparison-box without fade-in">
+                <h3>â Without WillKeeper</h3>
+                <ul>
+                    <li>Family spends months searching</li>
+                    <li>â¹Lakhs lost to unclaimed assets</li>
+                    <li>Emotional burden and confusion</li>
+                    <li>No guidance on claim process</li>
+                    <li>Documents scattered everywhere</li>
+                    <li>Assets forgotten forever</li>
+                </ul>
+            </div>
+            <div class="comparison-box with fade-in">
+                <h3>â With WillKeeper</h3>
+                <ul>
+                    <li>Family knows everything in minutes</li>
+                    <li>Zero rupees lost to confusion</li>
+                    <li>Guided, organized process</li>
+                    <li>Step-by-step claim guidance</li>
+                    <li>Everything in one secure vault</li>
+                    <li>Peace of mind for everyone</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing fade-in" id="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <p>Choose the plan that fits your family's needs.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card fade-in">
+                <h3>Essential</h3>
+                <div class="pricing-price">Free</div>
+                <div class="pricing-period">Forever</div>
+                <ul class="pricing-features">
+                    <li>Up to 20 documents</li>
+                    <li>1 nominee</li>
+                    <li>DigiLocker integration</li>
+                    <li>Basic vault access</li>
+                </ul>
+                <button class="pricing-cta">Start Now</button>
+            </div>
+            <div class="pricing-card fade-in">
+                <div class="pricing-badge">MOST POPULAR</div>
+                <h3>Complete</h3>
+                <div class="pricing-price">â¹999</div>
+                <div class="pricing-period">per year</div>
+                <ul class="pricing-features">
+                    <li>Unlimited documents</li>
+                    <li>Up to 4 nominees</li>
+                    <li>Claim guidance</li>
+                    <li>Vault health score</li>
+                    <li>Annual reminders</li>
+                </ul>
+                <button class="pricing-cta">Join Waitlist</button>
+            </div>
+            <div class="pricing-card fade-in">
+                <h3>Legacy</h3>
+                <div class="pricing-price">â¹4,999</div>
+                <div class="pricing-period">per year</div>
+                <ul class="pricing-features">
+                    <li>Everything in Complete</li>
+                    <li>Dedicated Relationship Manager</li>
+                    <li>Will template & legal review</li>
+                    <li>CA/advisor access</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="pricing-cta">Join Waitlist</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof fade-in">
+        <h2>Built on Trust and Expertise</h2>
+        <div class="proof-grid">
+            <div class="proof-card fade-in">
+                <svg class="proof-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 2C11.94 2 2 11.94 2 24s9.94 22 22 22 22-9.94 22-22S36.06 2 24 2zm-2 33h4V27h-4v8zm0-12h4V11h-4v12z" fill="#1A56DB"/>
+                </svg>
+                <h3>12+ Years of Enterprise Engineering</h3>
+                <p>Led by Deepak, who built systems at Intel, ExxonMobil, Siemens, and Azure. We know security at scale.</p>
+            </div>
+            <div class="proof-card fade-in">
+                <svg class="proof-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 2C11.94 2 2 11.94 2 24s9.94 22 22 22 22-9.94 22-22S36.06 2 24 2zm11 17h-10v10h-2V19H13v-2h10V7h2v10h10v2z" fill="#0D7377"/>
+                </svg>
+                <h3>Bank-Grade Security on Azure</h3>
+                <p>Your data is protected with AES-256 encryption, SSL, and enterprise-class infrastructure you can trust.</p>
+            </div>
+            <div class="proof-card fade-in">
+                <svg class="proof-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 2C11.94 2 2 11.94 2 24s9.94 22 22 22 22-9.94 22-22S36.06 2 24 2zm0 40c-9.94 0-18-8.06-18-18s8.06-18 18-18 18 8.06 18 18-8.06 18-18 18zm3.5-9h-7v-6h7v6z" fill="#F59E0B"/>
+                </svg>
+                <h3>Government Integration Ready</h3>
+                <p>DigiLocker integration (application in progress) ensures your documents are legally recognized.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq fade-in" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Is my data safe?</button>
+                <div class="faq-answer">
+                    <p>Absolutely. We use AES-256 encryption (military-grade), SSL/TLS for all data in transit, and host everything on Microsoft Azure with enterprise-class security. Your sensitive information is protected with the same standards used by banks and financial institutions.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can my nominees see my vault right now?</button>
+                <div class="faq-answer">
+                    <p>No. Nominees are added to your account but have zero access to your data until a verified death event occurs. We use a multi-party verification process (death certificate + nominee OTP + team review) before any access is granted.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What happens if I stop paying?</button>
+                <div class="faq-answer">
+                    <p>You'll revert to the Essential (free) plan, which always remains available. Your data is never deleted, and you can return to a paid plan anytime. We believe financial protection shouldn't depend on continuous payments.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How do you verify that someone has died?</button>
+                <div class="faq-answer">
+                    <p>We use a multi-party verification approach: 1) Death certificate submission, 2) OTP verification from a designated nominee, 3) WillKeeper team review. This prevents fraud while respecting privacy and family confidentiality.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is this legally valid as a will?</button>
+                <div class="faq-answer">
+                    <p>WillKeeper is a digital vault for storing and organizing your financial information â not a legal will. It helps your family discover what exists and guides them through the claim process. We recommend creating a formal, legally-binding will separately with a lawyer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Capture Section -->
+    <section class="email-capture fade-in" id="email-capture">
+        <h2>Be the First to Protect Your Family's Future</h2>
+        <p>Join our waitlist and be among the first to secure your legacy.</p>
+        <form class="email-form" id="waitlist-form">
+            <input
+                type="email"
+                class="email-input"
+                placeholder="your@email.com"
+                required
+                autocomplete="email"
+            >
+            <button type="submit" class="email-submit">Join the Waitlist</button>
+        </form>
+        <div class="email-counter">147 families already waiting</div>
+        <div class="privacy-note">We'll never share your email. Unsubscribe anytime.</div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-section">
+                    <a href="#" class="footer-logo">
+                        <svg class="footer-logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#F59E0B" width="32" height="32" rx="4"/>
+                            <path fill="white" d="M16 4c-1.1 0-2 .9-2 2v4h-4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V12c0-1.1-.9-2-2-2h-4V6c0-1.1-.9-2-2-2zm0 2h2v4h-2V6zm-6 6h12v12H10V12z"/>
+                        </svg>
+                        WillKeeper
+                    </a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Securing India's digital inheritance.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WillKeeper. All rights reserved.</p>
+                <p>ð§ <a href="mailto:hello@willkeeper.in" style="color: var(--accent);">hello@willkeeper.in</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Toast Notification Function
+        function showToast(message, duration = 4000) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.animation = 'slideIn 0.3s ease-out reverse';
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, duration);
+        }
+
+        // Email Form Submission
+        document.getElementById('waitlist-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = e.target.querySelector('.email-input').value;
+
+            // Validate email
+            if (!email || !email.includes('@')) {
+                showToast('Please enter a valid email address');
+                return;
+            }
+
+            // Show success message
+            showToast('â You\'re on the waitlist! Check your email soon.');
+
+            // Clear form
+            e.target.reset();
+
+            // Here you would normally send the email to your backend
+            // Example: fetch('/api/waitlist', { method: 'POST', body: JSON.stringify({ email }) })
+            console.log('Email submitted:', email);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Pricing CTA buttons
+        document.querySelectorAll('.pricing-cta').forEach(button => {
+            button.addEventListener('click', () => {
+                const planName = button.closest('.pricing-card').querySelector('h3').textContent;
+                showToast(`${planName} plan selected - redirecting to signup...`);
+                // Scroll to email capture section
+                document.getElementById('email-capture').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Hero section smooth scroll
+        document.querySelectorAll('[href="#how-it-works"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('how-it-works').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
